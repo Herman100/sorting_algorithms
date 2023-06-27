@@ -49,6 +49,10 @@ void radix_counting_sort(int *array, size_t size, int exp, int *output);
 void bitonic_sort(int *array, size_t size);
 void bitonic_sort_recursive(int *array, size_t low, size_t count, bool dir);
 void bitonic_compare(int *array, size_t i, size_t j, bool dir);
+void hoare_swap(int *a, int *b);
+int hoare_partition(int *array, size_t size, int low, int high);
+void quick_sort_hoare_recursive(int *array, size_t size, int low, int high);
+void quick_sort_hoare(int *array, size_t size);
 
 
 
