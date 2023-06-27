@@ -39,6 +39,11 @@ void init_count_array(int *count_array, int max);
 void merge(int *array, size_t size, int mid, int *temp);
 void split_merge(int *array, size_t size, int *temp);
 void merge_sort(int *array, size_t size);
+void heap_swap(int *array, int i, int j, size_t size);
+void sift_down(int *array, size_t start, size_t end, size_t size);
+void heapify(int *array, size_t size);
+void heap_sort(int *array, size_t size);
+
 
 
 
