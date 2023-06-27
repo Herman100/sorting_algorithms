@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <stddef.h>
 /**
  * struct listint_s - Doubly linked list node structure
  * @n: Integer value stored in the node
@@ -45,8 +46,9 @@ void heapify(int *array, size_t size);
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void radix_counting_sort(int *array, size_t size, int exp, int *output);
-
-
+void bitonic_sort(int *array, size_t size);
+void bitonic_sort_recursive(int *array, size_t low, size_t count, bool dir);
+void bitonic_compare(int *array, size_t i, size_t j, bool dir);
 
 
 
