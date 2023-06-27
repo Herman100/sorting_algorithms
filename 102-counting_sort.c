@@ -1,6 +1,38 @@
 #include "sort.h"
 
 /**
+ * init_count_array - initializes the count_array
+ * @count_array: array to initialize
+ * @max: size of the count_array
+ */
+void init_count_array(int *count_array, int max)
+{
+	int i;
+
+	for (i = 0; i <= max; i++)
+		count_array[i] = 0;
+}
+
+/**
+ * populate_output_array - populates the output_array
+ * @array: input array
+ * @output_array: array to populate
+ * @count_array: count array
+ * @size: size of the input and output arrays
+ */
+void populate_output_array(int *array, int *output_array,
+		int *count_array, size_t size)
+{
+	int i;
+
+	for (i = 0; i < (int)size; i++)
+	{
+		output_array[count_array[array[i]] - 1] = array[i];
+		count_array[array[i]]--;
+	}
+}
+
+/**
  * counting_sort - sorts an array of integers in ascending order
  * using the Counting sort algorithm
  * @array: array of integers to sort
@@ -22,8 +54,7 @@ void counting_sort(int *array, size_t size)
 	if (!count_array)
 		return;
 
-	for (i = 0; i <= max; i++)
-		count_array[i] = 0;
+	init_count_array(count_array, max);
 
 	for (i = 0; i < (int)size; i++)
 		count_array[array[i]]++;
@@ -40,11 +71,7 @@ void counting_sort(int *array, size_t size)
 		return;
 	}
 
-	for (i = 0; i < (int)size; i++)
-	{
-		output_array[count_array[array[i]] - 1] = array[i];
-		count_array[array[i]]--;
-	}
+	populate_output_array(array, output_array, count_array, size);
 
 	for (i = 0; i < (int)size; i++)
 		array[i] = output_array[i];
