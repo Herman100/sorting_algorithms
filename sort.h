@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <stdbool.h>
 /**
  * struct listint_s - Doubly linked list node structure
  * @n: Integer value stored in the node
@@ -43,8 +43,8 @@ void heap_swap(int *array, int i, int j, size_t size);
 void sift_down(int *array, size_t start, size_t end, size_t size);
 void heapify(int *array, size_t size);
 void heap_sort(int *array, size_t size);
-
-
+void radix_sort(int *array, size_t size);
+void radix_counting_sort(int *array, size_t size, int exp, int *output);
 
 
 
